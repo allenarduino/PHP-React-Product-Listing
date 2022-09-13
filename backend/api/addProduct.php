@@ -7,8 +7,8 @@ include "../models/ProductModel.php";
 
 $data = json_decode(file_get_contents("php://input"));
 
-if ($data->type == 'Dvd') {
-    $dvd = new Dvd($data->SKU, $data->name, $data->price, $data->type, $data->size);
+if ($data->type == 'DVD') {
+    $dvd = new DVD($data->SKU, $data->name, $data->price, $data->type, $data->size);
     $dvd->addProduct($dvd);
 } elseif ($data->type == 'Furniture') {
     $furniture = new Furniture($data->SKU, $data->name, $data->price, $data->type, $data->height, $data->width, $data->length);

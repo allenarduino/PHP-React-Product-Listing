@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.css';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export const ProductListHeader = () => {
-  const location = useLocation();
   const history = useHistory();
 
-  const moveToAddPage = () => {
+  const moveToAddPage = (e) => {
+    e.preventDefault();
     history.push('/add-product');
   };
   return (

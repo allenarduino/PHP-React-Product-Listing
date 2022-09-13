@@ -36,7 +36,7 @@ abstract public function addProduct($data);
 
 }
 
-class Dvd extends ProductModel{
+class DVD extends ProductModel{
     public $data;
     protected $size;
 
