@@ -83,6 +83,7 @@ const AddProduct = () => {
               Weight (KG)
             </label>
             <input id="Book" required className="input-style" />
+            <p>Please provide weight in KG</p>
           </div>
         ) : null}
       </div>
