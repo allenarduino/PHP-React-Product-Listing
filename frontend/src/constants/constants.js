@@ -1,3 +1,3 @@
 export const Constants = {
-  baseUrl: 'http://localhost:80.....',
+  baseUrl: 'http://localhost:80/PHP-React-Product-Listing/api',
 };

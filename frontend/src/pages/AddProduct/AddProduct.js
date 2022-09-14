@@ -1,4 +1,5 @@
 import React from 'react';
+import { createProduct } from '../../api/api';
 import { AddProductHeader } from '../../components/AddProductHeader/AddProductHeader';
 import './style.css';
 
@@ -47,9 +48,9 @@ const AddProduct = () => {
     setWeight(e.target.value);
   };
 
-  const addPost = (e) => {
+  const addPost = async (e) => {
     e.preventDefault();
-    console.log({
+    const productObj = {
       SKU: SKU,
       name: name,
       price: price,
@@ -59,7 +60,8 @@ const AddProduct = () => {
       width: width,
       length: length,
       weight: weight,
-    });
+    };
+    await createProduct(JSON.stringify(productObj));
   };
 
   return (
