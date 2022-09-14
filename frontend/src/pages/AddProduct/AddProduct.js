@@ -65,7 +65,7 @@ const AddProduct = () => {
   };
 
   return (
-    <form id="product-form">
+    <form id="product-form" onSubmit={addPost}>
       <AddProductHeader addPost={addPost} />
       <div id="product-form">
         <div className="input-conatiner">

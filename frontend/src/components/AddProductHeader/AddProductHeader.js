@@ -14,7 +14,7 @@ export const AddProductHeader = ({ addPost }) => {
       <div className="spacer"></div>
 
       <div className="nav-buttons">
-        <input type="submit" value="SAVE" id="save-butn" onClick={addPost} />
+        <input type="submit" value="SAVE" id="save-butn" />
         <button id="cancel-butn" onClick={moveToProductListPage}>
           CANCEL
         </button>
