@@ -8,6 +8,29 @@ import './style.css';
 
 const Home = () => {
   const [products, setPrducts] = React.useState([]);
+  const [selectedProducts, setSelectedProducts] = React.useState([]);
+
+  const handleCheckboxChange = (e) => {
+    console.log(e.target.checked);
+    const isChecked = e.target.checked;
+    const id = e.target.id;
+
+    if (isChecked) {
+      console.log(id);
+      const found = products.find((product) => {
+        return product.id == id;
+      });
+      setSelectedProducts([...selectedProducts, found.id]);
+
+      console.log(selectedProducts);
+    } else {
+      const index = selectedProducts.indexOf(id);
+      selectedProducts.splice(index, 1);
+      console.log(selectedProducts);
+    }
+
+    console.log(selectedProducts);
+  };
 
   const fetchProducts = async () => {
     setPrducts(await getProducts());
@@ -24,9 +47,18 @@ const Home = () => {
         <div className="product-grid">
           {products.map((product) => (
             <div>
-              {product.type == 'DVD' ? <DVDProductCard product={product} /> : null}
-              {product.type == 'Furniture' ? <FurnitureProductCard product={product} /> : null}
-              {product.type == 'Book' ? <BookProductCard product={product} /> : null}
+              {product.type == 'DVD' ? (
+                <DVDProductCard product={product} handleCheckboxChange={handleCheckboxChange} />
+              ) : null}
+              {product.type == 'Furniture' ? (
+                <FurnitureProductCard
+                  product={product}
+                  handleCheckboxChange={handleCheckboxChange}
+                />
+              ) : null}
+              {product.type == 'Book' ? (
+                <BookProductCard product={product} handleCheckboxChange={handleCheckboxChange} />
+              ) : null}
             </div>
           ))}
         </div>
