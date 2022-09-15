@@ -5,10 +5,11 @@ import { DVDProductCard } from '../../components/DVDProductCard/DVDProductCard';
 import { FurnitureProductCard } from '../../components/FurnitureProductCard/FurnitureProductCard';
 import { BookProductCard } from '../../components/BookProductCard/BookProductCard';
 import './style.css';
+import { ProductContext } from '../../contexts/ProductContextProvider';
 
 const Home = () => {
-  const [products, setPrducts] = React.useState([]);
   const [selectedProducts, setSelectedProducts] = React.useState([]);
+  const { product_state, product_dispatch } = React.useContext(ProductContext);
 
   const handleCheckboxChange = (e) => {
     console.log(e.target.checked);
@@ -17,7 +18,7 @@ const Home = () => {
 
     if (isChecked) {
       console.log(id);
-      const found = products.find((product) => {
+      const found = product_state.products.find((product) => {
         return product.id == id;
       });
       setSelectedProducts([...selectedProducts, found.id]);
@@ -32,9 +33,13 @@ const Home = () => {
     console.log(selectedProducts);
   };
 
+  const deleteProducts = () => {
+    product_dispatch({ type: 'DELETE_SELECTED_PRODUCTS', payload: selectedProducts });
+  };
+
   const fetchProducts = async () => {
-    setPrducts(await getProducts());
-    console.log(products);
+    let products = await getProducts();
+    product_dispatch({ type: 'FETCH_PRODUCTS', payload: products });
   };
 
   React.useEffect(() => {
@@ -42,10 +47,10 @@ const Home = () => {
   }, []);
   return (
     <>
-      <ProductListHeader />
+      <ProductListHeader deleteProducts={deleteProducts} />
       <div className="product-background">
         <div className="product-grid">
-          {products.map((product) => (
+          {product_state.products.map((product) => (
             <div>
               {product.type == 'DVD' ? (
                 <DVDProductCard product={product} handleCheckboxChange={handleCheckboxChange} />

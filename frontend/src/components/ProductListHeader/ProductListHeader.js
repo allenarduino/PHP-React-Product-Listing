@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import { useHistory } from 'react-router-dom';
 
-export const ProductListHeader = () => {
+export const ProductListHeader = ({ deleteProducts }) => {
   const history = useHistory();
 
   const moveToAddPage = (e) => {
@@ -17,7 +17,9 @@ export const ProductListHeader = () => {
         <button id="add-product-butn" onClick={moveToAddPage}>
           ADD
         </button>
-        <button id="delete-product-butn">MASS DELETE</button>
+        <button id="delete-product-butn" onClick={deleteProducts}>
+          MASS DELETE
+        </button>
       </div>
     </nav>
   );
