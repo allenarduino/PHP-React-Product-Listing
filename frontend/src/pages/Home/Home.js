@@ -12,29 +12,23 @@ const Home = () => {
   const { product_state, product_dispatch } = React.useContext(ProductContext);
 
   const handleCheckboxChange = (e) => {
-    console.log(e.target.checked);
     const isChecked = e.target.checked;
     const id = e.target.id;
 
     if (isChecked) {
-      console.log(id);
       const found = product_state.products.find((product) => {
         return product.id == id;
       });
       setSelectedProducts([...selectedProducts, found.id]);
-
-      console.log(selectedProducts);
     } else {
       const index = selectedProducts.indexOf(id);
       selectedProducts.splice(index, 1);
-      console.log(selectedProducts);
     }
-
-    console.log(selectedProducts);
   };
 
   const deleteProducts = () => {
     product_dispatch({ type: 'DELETE_SELECTED_PRODUCTS', payload: selectedProducts });
+    setSelectedProducts([]);
   };
 
   const fetchProducts = async () => {

@@ -5,7 +5,7 @@ class ProductController
     public function addDVD($dvd)
     {
         $conn = db();
-        $sku = mysqli_escape_string($conn,$dvd->getSKU());
+        $sku = mysqli_escape_string($conn, $dvd->getSKU());
         $name = mysqli_escape_string($conn, $dvd->getName());
         $price = mysqli_escape_string($conn, $dvd->getPrice());
         $type = mysqli_escape_string($conn, $dvd->getType());
@@ -15,10 +15,10 @@ class ProductController
        products(SKU,name,price,type,size)
        VALUES ('$sku','$name','$price','$type','$size')";
 
-       mysqli_query($conn,$sql);
+        mysqli_query($conn, $sql);
 
         if (mysqli_query($conn, $sql)) {
-            echo json_encode(array("message"=>"product added successfully"));
+            echo json_encode(array("message" => "product added successfully"));
         } else {
             echo "Error" . $sql . mysqli_error($conn);
         }
@@ -41,7 +41,7 @@ class ProductController
        VALUES ('$sku','$name','$price','$type','$height','$width','$length')";
 
         if (mysqli_query($conn, $sql)) {
-            echo json_encode(array("message"=>"product added successfully"));
+            echo json_encode(array("message" => "product added successfully"));
         } else {
             echo "Error" . $sql . mysqli_error($conn);
         }
@@ -62,7 +62,7 @@ class ProductController
        VALUES ('$sku','$name','$price','$type','$weight')";
 
         if (mysqli_query($conn, $sql)) {
-            echo json_encode(array("message"=>"product added successfully"));
+            echo json_encode(array("message" => "product added successfully"));
         } else {
             echo "Error" . $sql . mysqli_error($conn);
         }
@@ -82,8 +82,8 @@ class ProductController
     {
         $conn = db();
         for ($i = 0; $i < $num; $i++) {
-            $productToDelete = $data['products'][$i];
-            $sql = "DELETE FROM products WHERE SKU='$productToDelete'";
+            $productToDelete = $data[$i];
+            $sql = "DELETE FROM products WHERE id='$productToDelete'";
             mysqli_query($conn, $sql);
         }
     }
