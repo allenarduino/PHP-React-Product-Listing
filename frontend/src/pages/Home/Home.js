@@ -4,6 +4,7 @@ import { ProductListHeader } from '../../components/ProductListHeader/ProductLis
 import { DVDProductCard } from '../../components/DVDProductCard/DVDProductCard';
 import { FurnitureProductCard } from '../../components/FurnitureProductCard/FurnitureProductCard';
 import { BookProductCard } from '../../components/BookProductCard/BookProductCard';
+import './style.css';
 
 const Home = () => {
   const [products, setPrducts] = React.useState([]);
@@ -20,7 +21,7 @@ const Home = () => {
     <>
       <ProductListHeader />
       <div className="product-background">
-        <div class="product-grid">
+        <div className="product-grid">
           {products.map((product) => (
             <div>
               {product.type == 'DVD' ? <DVDProductCard product={product} /> : null}
