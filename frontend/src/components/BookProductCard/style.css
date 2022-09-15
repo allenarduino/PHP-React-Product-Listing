@@ -17,3 +17,16 @@
 .product-text {
   margin-top: 10px;
 }
+
+.delete-checkbox {
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: -30px -30px;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
