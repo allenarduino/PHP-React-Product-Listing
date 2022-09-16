@@ -3,6 +3,7 @@ import { createProduct } from '../../api/api';
 import { AddProductHeader } from '../../components/AddProductHeader/AddProductHeader';
 import { Footer } from '../../components/Footer/Footer';
 import './style.css';
+import { useHistory } from 'react-router-dom';
 
 const AddProduct = () => {
   const [SKU, setSKU] = React.useState('');
@@ -14,6 +15,12 @@ const AddProduct = () => {
   const [width, setWidth] = React.useState('');
   const [length, setLength] = React.useState('');
   const [weight, setWeight] = React.useState('');
+
+  const history = useHistory();
+
+  const moveToHomePage = (e) => {
+    history.push('/');
+  };
 
   const handleSKU = (e) => {
     setSKU(e.target.value);
@@ -63,6 +70,7 @@ const AddProduct = () => {
       weight: weight,
     };
     await createProduct(JSON.stringify(productObj));
+    moveToHomePage();
   };
 
   return (
