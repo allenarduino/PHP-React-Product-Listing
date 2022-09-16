@@ -6,6 +6,7 @@ import { FurnitureProductCard } from '../../components/FurnitureProductCard/Furn
 import { BookProductCard } from '../../components/BookProductCard/BookProductCard';
 import './style.css';
 import { ProductContext } from '../../contexts/ProductContextProvider';
+import { Footer } from '../../components/Footer/Footer';
 
 const Home = () => {
   const [selectedProducts, setSelectedProducts] = React.useState([]);
@@ -66,6 +67,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

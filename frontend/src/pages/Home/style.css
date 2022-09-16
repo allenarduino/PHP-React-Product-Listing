@@ -1,11 +1,7 @@
 .product-background {
   display: flex;
   justify-content: center;
-  height: 100vh;
-  height: auto;
   padding-bottom: 80px;
-  margin-bottom: 30px;
-  background-color: #f5f5f5;
   text-align: center;
 }
 

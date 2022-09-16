@@ -1,6 +1,7 @@
 import React from 'react';
 import { createProduct } from '../../api/api';
 import { AddProductHeader } from '../../components/AddProductHeader/AddProductHeader';
+import { Footer } from '../../components/Footer/Footer';
 import './style.css';
 
 const AddProduct = () => {
@@ -65,108 +66,117 @@ const AddProduct = () => {
   };
 
   return (
-    <form id="product-form" onSubmit={addPost}>
-      <AddProductHeader addPost={addPost} />
-      <div id="product-form">
-        <div className="input-conatiner">
-          <label for="SKU" className="sku-label">
-            SKU
-          </label>
-          <input id="sku" className="input-style" value={SKU} onChange={handleSKU} required />
-        </div>
-        <div className="input-conatiner">
-          <label for="name" className="name-label">
-            Name
-          </label>
-          <input id="name" className="input-style" value={name} onChange={handleName} required />
-        </div>
-        <div className="input-conatiner">
-          <label for="price" className="price-label">
-            Price($)
-          </label>
-          <input id="price" className="input-style" value={price} onChange={handlePrice} required />
-        </div>
-        <div className="input-conatiner">
-          <label for="Type Switcher" className="type-label">
-            Type Switcher
-          </label>
-          <select id="productType" required onChange={handleTypeChange} value={type}>
-            <option value="">Type Switcher</option>
-            <option value="DVD">DVD</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Book">Book</option>
-          </select>
-        </div>
-
-        {type == 'DVD' ? (
+    <>
+      <form id="product-form" onSubmit={addPost}>
+        <AddProductHeader addPost={addPost} />
+        <div id="product-form">
           <div className="input-conatiner">
-            <label for="price" className="size-label">
-              Size (MB)
+            <label for="SKU" className="sku-label">
+              SKU
             </label>
-            <input id="DVD" className="input-style" value={size} onChange={handleSize} required />
-            <p>Please provide the size in MB</p>
+            <input id="sku" className="input-style" value={SKU} onChange={handleSKU} required />
           </div>
-        ) : null}
-
-        {type == 'Furniture' ? (
-          <>
-            <div className="input-conatiner">
-              <label for="height" className="size-label">
-                Height (CM)
-              </label>
-              <input
-                id="Furniture"
-                required
-                className="input-style"
-                value={height}
-                onChange={handleHeight}
-              />
-            </div>
-            <div className="input-conatiner">
-              <label for="width" className="size-label">
-                Width (CM)
-              </label>
-              <input
-                id="Furniture"
-                required
-                className="input-style"
-                value={width}
-                onChange={handleWidth}
-              />
-            </div>
-            <div className="input-conatiner">
-              <label for="length" className="size-label">
-                Length (CM)
-              </label>
-              <input
-                id="Furniture"
-                required
-                className="input-style"
-                value={length}
-                onChange={handleLength}
-              />
-              <p>Please provide dimensions in HxWxL format</p>
-            </div>
-          </>
-        ) : null}
-
-        {type == 'Book' ? (
           <div className="input-conatiner">
-            <label for="weight" className="size-label">
-              Weight (KG)
+            <label for="name" className="name-label">
+              Name
+            </label>
+            <input id="name" className="input-style" value={name} onChange={handleName} required />
+          </div>
+          <div className="input-conatiner">
+            <label for="price" className="price-label">
+              Price($)
             </label>
             <input
-              id="Book"
-              required
+              id="price"
               className="input-style"
-              value={weight}
-              onChange={handleWeight}
+              value={price}
+              onChange={handlePrice}
+              required
             />
-            <p>Please provide weight in KG</p>
           </div>
-        ) : null}
-      </div>
-    </form>
+          <div className="input-conatiner">
+            <label for="Type Switcher" className="type-label">
+              Type Switcher
+            </label>
+            <select id="productType" required onChange={handleTypeChange} value={type}>
+              <option value="">Type Switcher</option>
+              <option value="DVD">DVD</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Book">Book</option>
+            </select>
+          </div>
+
+          {type == 'DVD' ? (
+            <div className="input-conatiner">
+              <label for="price" className="size-label">
+                Size (MB)
+              </label>
+              <input id="DVD" className="input-style" value={size} onChange={handleSize} required />
+              <p>Please provide the size in MB</p>
+            </div>
+          ) : null}
+
+          {type == 'Furniture' ? (
+            <>
+              <div className="input-conatiner">
+                <label for="height" className="size-label">
+                  Height (CM)
+                </label>
+                <input
+                  id="Furniture"
+                  required
+                  className="input-style"
+                  value={height}
+                  onChange={handleHeight}
+                />
+              </div>
+              <div className="input-conatiner">
+                <label for="width" className="size-label">
+                  Width (CM)
+                </label>
+                <input
+                  id="Furniture"
+                  required
+                  className="input-style"
+                  value={width}
+                  onChange={handleWidth}
+                />
+              </div>
+              <div className="input-conatiner">
+                <label for="length" className="size-label">
+                  Length (CM)
+                </label>
+                <input
+                  id="Furniture"
+                  required
+                  className="input-style"
+                  value={length}
+                  onChange={handleLength}
+                />
+                <p>Please provide dimensions in HxWxL format</p>
+              </div>
+            </>
+          ) : null}
+
+          {type == 'Book' ? (
+            <div className="input-conatiner">
+              <label for="weight" className="size-label">
+                Weight (KG)
+              </label>
+              <input
+                id="Book"
+                required
+                className="input-style"
+                value={weight}
+                onChange={handleWeight}
+              />
+              <p>Please provide weight in KG</p>
+            </div>
+          ) : null}
+        </div>
+      </form>
+      <Footer />
+    </>
   );
 };
 
