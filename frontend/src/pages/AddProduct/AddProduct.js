@@ -95,6 +95,7 @@ const AddProduct = () => {
               Price($)
             </label>
             <input
+              type="number"
               id="price"
               className="input-style"
               value={price}
@@ -119,7 +120,14 @@ const AddProduct = () => {
               <label for="price" className="size-label">
                 Size (MB)
               </label>
-              <input id="DVD" className="input-style" value={size} onChange={handleSize} required />
+              <input
+                type="number"
+                id="DVD"
+                className="input-style"
+                value={size}
+                onChange={handleSize}
+                required
+              />
               <p>Please provide the size in MB</p>
             </div>
           ) : null}
@@ -131,6 +139,7 @@ const AddProduct = () => {
                   Height (CM)
                 </label>
                 <input
+                  type="number"
                   id="Furniture"
                   required
                   className="input-style"
@@ -143,6 +152,7 @@ const AddProduct = () => {
                   Width (CM)
                 </label>
                 <input
+                  type="number"
                   id="Furniture"
                   required
                   className="input-style"
@@ -155,6 +165,7 @@ const AddProduct = () => {
                   Length (CM)
                 </label>
                 <input
+                  type="number"
                   id="Furniture"
                   required
                   className="input-style"
@@ -172,6 +183,7 @@ const AddProduct = () => {
                 Weight (KG)
               </label>
               <input
+                type="number"
                 id="Book"
                 required
                 className="input-style"
