@@ -2,6 +2,11 @@
 
 Technical asssignment
 
+### Technologies used:
+
+- PHP
+- MySQL
+- React(JavaScript,HTML,CSS,Context API,hooks)
 
 ### Endpoints
 
