@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProducts } from '../../api/api';
+import { deleteSelectedProducts, getProducts } from '../../api/api';
 import { ProductListHeader } from '../../components/ProductListHeader/ProductListHeader';
 import { DVDProductCard } from '../../components/DVDProductCard/DVDProductCard';
 import { FurnitureProductCard } from '../../components/FurnitureProductCard/FurnitureProductCard';
@@ -26,9 +26,13 @@ const Home = () => {
     }
   };
 
-  const deleteProducts = () => {
+  const deleteProducts = async () => {
     product_dispatch({ type: 'DELETE_SELECTED_PRODUCTS', payload: selectedProducts });
-    setSelectedProducts([]);
+    const productObj = {
+      products: selectedProducts,
+      numOfProducts: selectedProducts.length,
+    };
+    await deleteSelectedProducts(JSON.stringify(productObj));
   };
 
   const fetchProducts = async () => {

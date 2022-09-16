@@ -18,3 +18,15 @@ export const getProducts = async () => {
     console.log(err);
   }
 };
+
+export const deleteSelectedProducts = async (productObj) => {
+  try {
+    const response = await axios.post(
+      `${Constants.baseUrl}/deleteSelectedProducts.php`,
+      productObj,
+    );
+    return response.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
