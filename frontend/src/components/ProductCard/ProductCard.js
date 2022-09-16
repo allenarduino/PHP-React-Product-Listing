@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-export const DVDProductCard = ({ product, handleCheckboxChange }) => {
+export const ProductCard = ({ product, handleCheckboxChange }) => {
   return (
     <div className="product-card">
       <div className="checkbox-container">
@@ -15,7 +15,13 @@ export const DVDProductCard = ({ product, handleCheckboxChange }) => {
       <span className="product-text">{product.SKU}</span>
       <span className="product-text">{product.name}</span>
       <span className="product-text">{product.price.toFixed(2)} $</span>
-      <span className="product-text">{product.size}MB</span>
+      {product.type == 'Furniture' ? (
+        <span className="product-text">
+          {product.height}x{product.width}x{product.length}
+        </span>
+      ) : null}
+      {product.type == 'Book' ? <span className="product-text">{product.weight}KG</span> : null}
+      {product.type == 'DVD' ? <span className="product-text">{product.size}MB</span> : null}
     </div>
   );
 };

@@ -1,10 +1,8 @@
 import React from 'react';
 import { deleteSelectedProducts, getProducts } from '../../api/api';
 import { ProductListHeader } from '../../components/ProductListHeader/ProductListHeader';
-import { DVDProductCard } from '../../components/DVDProductCard/DVDProductCard';
-import { FurnitureProductCard } from '../../components/FurnitureProductCard/FurnitureProductCard';
-import { BookProductCard } from '../../components/BookProductCard/BookProductCard';
 import './style.css';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { ProductContext } from '../../contexts/ProductContextProvider';
 import { Footer } from '../../components/Footer/Footer';
 
@@ -51,18 +49,7 @@ const Home = () => {
         <div className="product-grid">
           {product_state.products.map((product) => (
             <div>
-              {product.type == 'DVD' ? (
-                <DVDProductCard product={product} handleCheckboxChange={handleCheckboxChange} />
-              ) : null}
-              {product.type == 'Furniture' ? (
-                <FurnitureProductCard
-                  product={product}
-                  handleCheckboxChange={handleCheckboxChange}
-                />
-              ) : null}
-              {product.type == 'Book' ? (
-                <BookProductCard product={product} handleCheckboxChange={handleCheckboxChange} />
-              ) : null}
+              <ProductCard product={product} handleCheckboxChange={handleCheckboxChange} />
             </div>
           ))}
         </div>
