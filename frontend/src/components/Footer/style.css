@@ -5,4 +5,5 @@
   text-align: center;
   position: fixed;
   padding: 15px;
+  box-shadow: 0 1px 1px 1px rgba(9, 9, 9, 0.23);
 }
