@@ -15,8 +15,6 @@ class ProductController
        products(SKU,name,price,type,size)
        VALUES ('$sku','$name','$price','$type','$size')";
 
-        mysqli_query($conn, $sql);
-
         if (mysqli_query($conn, $sql)) {
             echo json_encode(array("message" => "product added successfully"));
         } else {
@@ -72,7 +70,7 @@ class ProductController
     public function getProducts()
     {
         $conn = db();
-        $sql = "SELECT* FROM products";
+        $sql = "SELECT* FROM products ORDER BY products.id DESC";
         $result = mysqli_query($conn, $sql);
         return $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
         mysqli_close($conn);

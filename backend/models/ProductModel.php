@@ -44,9 +44,7 @@ class DVD extends ProductModel{
         $this->size=$size;
         parent::__construct($SKU,$name,$price,$type);
     }
-    public function setSize($size){
-        $this->size=$size;
-    }
+   
 
     public function getSize(){
        return $this->size;

@@ -61,13 +61,13 @@ const AddProduct = () => {
     const productObj = {
       SKU: SKU,
       name: name,
-      price: price,
+      price: Number(price),
       type: type,
-      size: size,
-      height: height,
-      width: width,
-      length: length,
-      weight: weight,
+      size: Number(size),
+      height: Number(height),
+      width: Number(width),
+      length: Number(length),
+      weight: Number(weight),
     };
     await createProduct(JSON.stringify(productObj));
     moveToHomePage();
