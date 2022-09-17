@@ -2,6 +2,8 @@
 include '../config/db.php';
 class ProductController
 {
+  
+
     public function addDVD($dvd)
     {
         $conn = db();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2022 at 03:02 AM
+-- Generation Time: Sep 17, 2022 at 03:55 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -46,18 +46,18 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `SKU`, `name`, `price`, `type`, `size`, `weight`, `height`, `length`, `width`) VALUES
-(1, 'JVC200123', 'Acme DISC', 1.00, 'DVD', 700, NULL, NULL, NULL, NULL),
-(2, 'JVC200123', 'Acme DISC', 1.00, 'DVD', 700, NULL, NULL, NULL, NULL),
-(5, 'JVC200123', 'Acme DISC', 1.00, 'DVD', 700, NULL, NULL, NULL, NULL),
-(6, 'JVC200123', 'Acme DISC', 1.00, 'DVD', 700, NULL, NULL, NULL, NULL),
-(7, 'GGWPOOO7', 'War and Peace', 20.00, 'Book', NULL, 2, NULL, NULL, NULL),
-(8, 'GGWPOOO7', 'War and Peace', 20.00, 'Book', NULL, 2, NULL, NULL, NULL),
-(9, 'GGWPOOO7', 'War and Peace', 20.00, 'Book', NULL, 2, NULL, NULL, NULL),
-(10, 'GGWPOOO7', 'War and Peace', 20.00, 'Book', NULL, 2, NULL, NULL, NULL),
-(11, 'TR120555', 'Chair', 40.00, 'Furniture', NULL, NULL, 24, 15, 45),
-(12, 'TR120555', 'Chair', 40.00, 'Furniture', NULL, NULL, 24, 15, 45),
-(13, 'TR120555', 'Chair', 40.00, 'Furniture', NULL, NULL, 24, 15, 45),
-(14, 'TR120555', 'Chair', 40.00, 'Furniture', NULL, NULL, 24, 15, 45);
+(1, 'JVC224488', 'Acme DISC', 1.00, 'DVD', 700, NULL, NULL, NULL, NULL),
+(2, 'JVC882299', 'Bio DISC', 20.00, 'DVD', 1000, NULL, NULL, NULL, NULL),
+(3, 'KCV23003030', 'CD Drive USB', 324.00, 'DVD', 3200, NULL, NULL, NULL, NULL),
+(4, 'GCC1249988', 'Multi Media Player', 190.67, 'DVD', 300, NULL, NULL, NULL, NULL),
+(5, 'KJC199774905', 'Waterproof Furniture', 900.00, 'Furniture', NULL, NULL, 300, 400, 600),
+(6, 'NKT4490039', 'Java 3rd Edition', 200.45, 'Book', NULL, 1, NULL, NULL, NULL),
+(8, 'MNC7893455', 'Dining Table Set', 568.00, 'Furniture', NULL, NULL, 2000, 5000, 3000),
+(10, 'RTK0094567', 'External Hard Drive', 432.00, 'DVD', 1099, NULL, NULL, NULL, NULL),
+(11, 'UMN789345545', 'PHP Cook Book', 98.00, 'Book', NULL, 1, NULL, NULL, NULL),
+(12, 'XDC8923569593', 'USB Duplicator', 300.00, 'DVD', 700, NULL, NULL, NULL, NULL),
+(13, 'UDR568484', 'Office Furniture Set', 1225.00, 'Furniture', NULL, NULL, 1000, 8000, 3000),
+(14, 'SKJ90877666', 'C# Cook Book', 95.00, 'Book', NULL, 1, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables

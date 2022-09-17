@@ -5,7 +5,9 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 include "../models/ProductModel.php";
 
+
 $data = json_decode(file_get_contents("php://input"));
+
 
 if ($data->type == 'DVD') {
     $dvd = new DVD($data->SKU, $data->name, $data->price, $data->type, $data->size);
@@ -19,3 +21,5 @@ if ($data->type == 'DVD') {
 } else {
     echo json_encode(array('error' => 'Failed to add product'));
 }
+
+
