@@ -8,6 +8,7 @@ import { Footer } from '../../components/Footer/Footer';
 
 const Home = () => {
   const [selectedProducts, setSelectedProducts] = React.useState([]);
+  const [isChecked, setIsChecked] = React.useState(false);
   const { product_state, product_dispatch } = React.useContext(ProductContext);
 
   const checkItem = (id) => {
@@ -20,7 +21,7 @@ const Home = () => {
   };
 
   const handleCheckboxChange = (e) => {
-    const isChecked = e.target.checked;
+    let isChecked = e.target.checked;
     const id = e.target.id;
 
     if (isChecked) {
@@ -28,9 +29,12 @@ const Home = () => {
         return product.id == id;
       });
       setSelectedProducts([...selectedProducts, found.id]);
+      setIsChecked(true);
     } else {
       const index = selectedProducts.indexOf(id);
       selectedProducts.splice(index, 1);
+      console.log(isChecked);
+      setIsChecked(false);
     }
   };
 
@@ -61,7 +65,7 @@ const Home = () => {
               <ProductCard
                 product={product}
                 handleCheckboxChange={handleCheckboxChange}
-                checked={checkItem(product.id) ? true : false}
+                checked={checkItem(product.id)}
               />
             </div>
           ))}
