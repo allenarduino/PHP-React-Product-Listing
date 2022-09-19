@@ -10,6 +10,15 @@ const Home = () => {
   const [selectedProducts, setSelectedProducts] = React.useState([]);
   const { product_state, product_dispatch } = React.useContext(ProductContext);
 
+  const checkItem = (id) => {
+    const exists = selectedProducts.find((product_id) => product_id === id);
+    if (exists) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const handleCheckboxChange = (e) => {
     const isChecked = e.target.checked;
     const id = e.target.id;
@@ -49,7 +58,11 @@ const Home = () => {
         <div className="product-grid">
           {product_state.products.map((product) => (
             <div>
-              <ProductCard product={product} handleCheckboxChange={handleCheckboxChange} />
+              <ProductCard
+                product={product}
+                handleCheckboxChange={handleCheckboxChange}
+                checked={checkItem(product.id) ? true : false}
+              />
             </div>
           ))}
         </div>

@@ -27,7 +27,7 @@
   justify-content: space-between;
 }
 
-#save-butn {
+.save-butn {
   cursor: pointer;
   background-color: rgb(73, 8, 73);
   border: none;
@@ -37,7 +37,7 @@
   border-radius: 5px;
 }
 
-#cancel-butn {
+.cancel-butn {
   cursor: pointer;
   background-color: #e3405f;
   border: none;

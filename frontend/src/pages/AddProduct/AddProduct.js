@@ -75,7 +75,7 @@ const AddProduct = () => {
 
   return (
     <>
-      <form id="product-form" onSubmit={addPost}>
+      <form id="product_form" onSubmit={addPost}>
         <AddProductHeader addPost={addPost} />
         <div id="product-form">
           <div className="input-conatiner">
@@ -122,7 +122,7 @@ const AddProduct = () => {
               </label>
               <input
                 type="number"
-                id="DVD"
+                id="size"
                 className="input-style"
                 value={size}
                 onChange={handleSize}
@@ -140,7 +140,7 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="number"
-                  id="Furniture"
+                  id="height"
                   required
                   className="input-style"
                   value={height}
@@ -153,7 +153,7 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="number"
-                  id="Furniture"
+                  id="width"
                   required
                   className="input-style"
                   value={width}
@@ -166,7 +166,7 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="number"
-                  id="Furniture"
+                  id="length"
                   required
                   className="input-style"
                   value={length}
@@ -184,7 +184,7 @@ const AddProduct = () => {
               </label>
               <input
                 type="number"
-                id="Book"
+                id="weight"
                 required
                 className="input-style"
                 value={weight}

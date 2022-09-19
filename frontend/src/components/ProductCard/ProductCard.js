@@ -1,15 +1,16 @@
 import React from 'react';
 import './style.css';
 
-export const ProductCard = ({ product, handleCheckboxChange }) => {
+export const ProductCard = ({ product, handleCheckboxChange, checked }) => {
   return (
-    <div className="product-card">
+    <div class="product-card">
       <div className="checkbox-container">
         <input
           type="checkbox"
-          className="delete-checkbox"
+          class="delete-checkbox"
           onChange={handleCheckboxChange}
           id={product.id}
+          checked={checked}
         />
       </div>
       <span className="product-text">{product.SKU}</span>
